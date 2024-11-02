@@ -4,7 +4,7 @@ import Search from "../public/search.svg";
 import "./App.css";
 
 // 72e0dce
-const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=72e0dce";
+const API_URL = "https://www.omdbapi.com/?i=tt3896198&apikey=72e0dce";
 
 const App = () => {
   const [movies, setMovie] = useState([]);
@@ -13,6 +13,7 @@ const App = () => {
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
     setMovie(data.Search);
+    console.log(data)
     console.log(data.Search);
   };
   useEffect(() => {
